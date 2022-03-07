@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+	int t,count=0;//how many case
+	scanf("%d",&t);
+	char array[t][20],judge[t][20];
+	
+	while(t-count>0) //分批輸入 
+	{
+		fflush(stdin);
+		gets(array[count]);
+		gets(judge[count]);
+		count++;
+	}
+	count=0;
+	int index=0;
+	char nospace[20];
+	/*if the input of team is equal to the input of Judges 
+	=>output:Yes
+	else
+	make the input of team into new array that don't have space to compare
+	with the input of Judges
+	=>output:Output Format Error if the input of team(excluding space) is equal to
+	the input of Judges
+	=>otherwise output:Wrong Answer
+	*/ 
+	while(count<t)
+	{
+		switch(count)
+		{
+			case 0:
+				printf("Case 1: ");
+				break;
+			case 1:
+				printf("Case 2: ");
+				break;
+			case 2:
+				printf("Case 3: ");
+				break;		
+		}
+		if(strcmp(array[count],judge[count])==0)
+			{
+				printf("Yes\n");
+			}
+		else
+		{
+		for(int i=0;i<20;i++)
+		{
+			if(array[count][i]=='\0')
+			break;
+			if(array[count][i]!=' ')
+			nospace[index++]=array[count][i];
+		}
+		nospace[index]='\0';
+		if(strcmp(nospace,judge[count])==0)
+		{
+		printf("Output Format Error\n");	
+		} 
+		else
+		{
+			printf("Wrong Answer\n");
+		}	
+		}	
+		
+		count++;
+		index=0;
+		memset(nospace,20,'\0');
+	}
+	return 0;
+}
