@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main()
+{
+	int T;
+	scanf("%d",&T);
+	int relate[T][10],count=0,i,j,k;
+	int *max=calloc(T,sizeof(int));
+	char web[T][10][100];
+	while(count<2)
+	{
+		for(i=0;i<10;i++)
+		{
+		scanf("%s %d",web[count][i],&relate[count][i]);
+		if(*(max+count)<relate[count][i])
+		*(max+count)=relate[count][i];	
+		}
+		count++;
+	}
+	printf("\n");
+	for(j=0;j<T;j++)
+	{
+		printf("Case #%d:\n",j+1);
+		for(k=0;k<10;k++)
+		{
+			if(relate[j][k]==*(max+j))
+			{
+				printf("%s\n",web[j][k]);
+			}
+		}
+	}
+	return 0;
+}
