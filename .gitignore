@@ -1,0 +1,11 @@
+.vscode/
+others/*.txt
+star 1/*.txt
+star 2/*.txt
+star 3/*.txt
+star 1/*.exe
+star 2/*.exe
+star 3/*.exe
+star 1/.vscode/
+star 2/.vscode/
+star 3/.vscode/
